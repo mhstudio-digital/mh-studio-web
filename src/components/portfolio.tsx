@@ -1,0 +1,130 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+};
+
+const DEMO_PROJECTS = [
+  {
+    title: "La Cevichera",
+    description: "Sitio para restaurante de mariscos con menú digital",
+    tags: ["Restaurante", "Menú digital"],
+    gradient: "from-white/[0.06] via-transparent to-white/[0.02]",
+  },
+  {
+    title: "Ansel Boutique",
+    description: "Tienda de moda con catálogo y checkout integrado",
+    tags: ["E-commerce", "Branding"],
+    gradient: "from-white/[0.04] via-transparent to-white/[0.08]",
+  },
+];
+
+export function Portfolio() {
+  return (
+    <section id="portfolio" className="border-b border-mh-border py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <motion.h2
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+          transition={{ duration: 0.6 }}
+          className="mb-12 text-3xl font-semibold tracking-tight text-white sm:text-4xl"
+        >
+          Nuestro trabajo
+        </motion.h2>
+
+        <div className="grid grid-cols-1 gap-4">
+          {/* Featured — real project */}
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeUp}
+            transition={{ duration: 0.6 }}
+            className="group relative overflow-hidden rounded-xl border border-mh-border bg-mh-surface transition-colors duration-500 hover:border-mh-border-hover"
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-br from-white/[0.07] via-transparent to-transparent transition-transform duration-700 ease-out group-hover:scale-110"
+            />
+            <div className="relative grid grid-cols-1 gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white">
+                  Proyecto real
+                </span>
+                <h3 className="mt-5 text-2xl font-semibold text-white sm:text-3xl">
+                  Matías Parfum
+                </h3>
+                <p className="mt-3 max-w-md text-mh-muted">
+                  E-commerce de perfumería de lujo
+                </p>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {["Next.js", "Diseño premium", "E-commerce"].map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-full border border-mh-border px-3 py-1 text-xs text-mh-muted"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-mh-border bg-gradient-to-br from-mh-bg via-mh-surface to-black transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.12),transparent_60%)]" />
+                <span className="absolute bottom-5 left-5 text-sm font-medium text-white/70">
+                  matiasparfum.com
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Demo projects */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {DEMO_PROJECTS.map((project) => (
+              <motion.div
+                key={project.title}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.015 }}
+                className="group relative overflow-hidden rounded-xl border border-mh-border bg-mh-surface p-8 transition-colors duration-300 hover:border-mh-border-hover"
+              >
+                <div
+                  aria-hidden
+                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                />
+                <div className="relative">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
+                    Demo conceptual
+                  </span>
+                  <h3 className="mt-5 text-xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-mh-muted">
+                    {project.description}
+                  </p>
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="rounded-full border border-mh-border px-3 py-1 text-xs text-mh-muted"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
