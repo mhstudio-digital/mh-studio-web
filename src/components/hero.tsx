@@ -37,7 +37,7 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           className="text-balance text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl md:text-7xl"
         >
           <span className="block">Diseño web que</span>
@@ -60,7 +60,7 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="mt-8 max-w-xl text-balance text-lg text-mh-muted"
         >
           Creamos sitios premium para restaurantes, tiendas y emprendedores que
@@ -70,7 +70,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
         >
           <Link
@@ -92,7 +92,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
           className="relative mt-20 w-full max-w-3xl overflow-hidden rounded-2xl border border-mh-border bg-mh-surface/40 p-[1px]"
         >
           <div className="absolute inset-[-60%] bg-[conic-gradient(from_0deg,transparent_0%,rgba(255,255,255,0.15)_50%,transparent_100%)] opacity-40 [animation:borderSpin_6s_linear_infinite]" />
