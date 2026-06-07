@@ -37,7 +37,7 @@ export function Services() {
             transition={{ duration: 0.6 }}
             className="md:col-span-2"
           >
-            <TiltCard className="group relative overflow-hidden rounded-xl border border-mh-border bg-mh-surface p-8 transition-colors duration-300 hover:border-mh-border-hover sm:p-12">
+            <TiltCard className="group relative overflow-hidden rounded-xl border border-mh-border bg-mh-surface p-6 transition-colors duration-300 hover:border-mh-border-hover sm:p-12">
               <span className="pointer-events-none absolute -right-4 -top-6 select-none text-[8rem] font-bold leading-none text-white/[0.04] sm:text-[10rem]">
                 01
               </span>
@@ -109,7 +109,7 @@ function ServiceCard({
   price?: string;
 }) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-xl border border-mh-border bg-mh-surface p-8 transition-colors duration-300 hover:border-mh-border-hover">
+    <div className="group relative h-full overflow-hidden rounded-xl border border-mh-border bg-mh-surface p-6 transition-colors duration-300 hover:border-mh-border-hover sm:p-8">
       <span className="pointer-events-none absolute -right-2 -top-4 select-none text-7xl font-bold leading-none text-white/[0.04]">
         {number}
       </span>

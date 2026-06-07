@@ -15,7 +15,7 @@ export function Marquee({
         {[...items, ...items].map((item, i) => (
           <div
             key={i}
-            className="flex shrink-0 items-center text-xl font-medium text-mh-muted transition-colors hover:text-mh-text"
+            className="flex shrink-0 items-center whitespace-nowrap text-xl font-medium text-mh-muted transition-colors hover:text-mh-text"
           >
             {item}
           </div>
