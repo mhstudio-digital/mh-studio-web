@@ -33,7 +33,7 @@ export function CTA() {
         <div className="mt-10">
           <AnimatedBorder containerClassName="p-[1.5px]">
             <a
-              href="https://wa.me/50683674466"
+              href="https://wa.me/50683674466?text=Hola%2C%20vi%20su%20sitio%20web%20y%20me%20interesa%20cotizar%20un%20proyecto"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-medium text-mh-bg transition-transform hover:scale-[1.03]"

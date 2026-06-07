@@ -38,7 +38,7 @@ export function Navbar() {
         </ul>
 
         <Link
-          href="https://wa.me/50683674466"
+          href="https://wa.me/50683674466?text=Hola%2C%20vi%20su%20sitio%20web%20y%20me%20interesa%20cotizar%20un%20proyecto"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative overflow-hidden rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white transition-colors duration-300 hover:text-mh-bg"

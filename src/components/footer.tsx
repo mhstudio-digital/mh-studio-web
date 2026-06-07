@@ -21,7 +21,7 @@ const COLUMNS = [
   {
     title: "Contacto",
     links: [
-      { label: "WhatsApp", href: "https://wa.me/50683674466" },
+      { label: "WhatsApp", href: "https://wa.me/50683674466?text=Hola%2C%20vi%20su%20sitio%20web%20y%20me%20interesa%20cotizar%20un%20proyecto" },
       { label: "Costa Rica 🇨🇷", href: "#" },
     ],
   },
