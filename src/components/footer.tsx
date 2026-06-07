@@ -67,7 +67,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-mh-border pt-8 text-sm text-mh-muted sm:flex-row">
           <p>Hecho con ❤️ en Costa Rica 🇨🇷</p>
-          <p>© 2025 MH Studio. Todos los derechos reservados.</p>
+          <p>© 2026 MH Studio. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
