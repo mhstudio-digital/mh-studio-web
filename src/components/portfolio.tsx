@@ -57,8 +57,8 @@ const DEMO_PROJECTS = [
     description: "Tienda de moda con catálogo y checkout integrado",
     tags: ["E-commerce", "Branding"],
     gradient: "from-white/[0.04] via-transparent to-white/[0.08]",
-    badge: "Próximamente",
-    url: undefined,
+    badge: "Demo conceptual",
+    url: "https://mhstudio-digital.github.io/ansel-boutique/",
     image: undefined,
   },
 ];
