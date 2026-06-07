@@ -1,11 +1,45 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0 },
 };
+
+const MATIAS_PARFUM_SCREENSHOT =
+  "https://api.microlink.io/?url=https://matiasparfum.com&screenshot=true&meta=false&embed=screenshot.url";
+
+function ScreenshotImage({
+  src,
+  alt,
+  gradient,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  gradient: string;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <div className={`bg-gradient-to-br ${gradient} bg-mh-bg ${className}`} />
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className={`object-cover ${className}`}
+    />
+  );
+}
 
 const DEMO_PROJECTS = [
   {
@@ -15,7 +49,8 @@ const DEMO_PROJECTS = [
     gradient: "from-white/[0.06] via-transparent to-white/[0.02]",
     badge: "Demo conceptual",
     url: "https://mhstudio-digital.github.io/costa-rica-properties/",
-    image: "/screenshots/costa-rica-properties.jpg",
+    image:
+      "https://api.microlink.io/?url=https://mhstudio-digital.github.io/costa-rica-properties/&screenshot=true&meta=false&embed=screenshot.url",
   },
   {
     title: "Ansel Boutique",
@@ -80,11 +115,11 @@ export function Portfolio() {
                 </ul>
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-mh-border transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/screenshots/matias-parfum.jpg"
+                <ScreenshotImage
+                  src={MATIAS_PARFUM_SCREENSHOT}
                   alt="Captura del sitio Matías Parfum"
-                  className="h-full w-full object-cover"
+                  gradient="from-mh-bg via-mh-surface to-black"
+                  className="h-full w-full"
                 />
                 <div className="absolute inset-0 bg-black/30" />
                 <span className="absolute bottom-5 left-5 text-sm font-medium text-white/70">
@@ -114,11 +149,11 @@ export function Portfolio() {
                 <div className="relative">
                   {project.image ? (
                     <div className="relative h-[200px] w-full overflow-hidden rounded-lg border border-mh-border">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <ScreenshotImage
                         src={project.image}
                         alt={`Captura del sitio ${project.title}`}
-                        className="h-full w-full object-cover"
+                        gradient={project.gradient}
+                        className="h-full w-full"
                       />
                       <div className="absolute inset-0 bg-black/30" />
                     </div>
