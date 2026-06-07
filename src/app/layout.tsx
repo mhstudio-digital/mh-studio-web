@@ -44,6 +44,31 @@ export const metadata: Metadata = {
   },
 };
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "MH Studio",
+  description:
+    "Agencia de diseño web premium en Costa Rica para restaurantes, tiendas y emprendedores.",
+  url: "https://mhstudio-digital.github.io/mh-studio-web",
+  telephone: "+50683674466",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "CR",
+    addressRegion: "San José",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 9.9281,
+    longitude: -84.0907,
+  },
+  priceRange: "$$",
+  servesCuisine: null,
+  sameAs: [],
+  openingHours: "Mo-Fr 08:00-18:00",
+  serviceType: "Diseño y desarrollo web",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,6 +79,12 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-mh-bg text-mh-text">
         {children}
       </body>
