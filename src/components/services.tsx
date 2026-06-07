@@ -51,7 +51,7 @@ export function Services() {
                   quieren verse premium.
                 </p>
                 <p className="mt-6 text-sm font-medium text-white">
-                  Desde <span className="text-mh-muted">$499</span>
+                  Desde <span className="text-mh-muted">$399</span>
                 </p>
               </div>
             </TiltCard>
@@ -64,6 +64,7 @@ export function Services() {
               icon={<ShoppingBag className="h-6 w-6" />}
               title="Tiendas Online"
               description="E-commerce completo, fácil de administrar y listo para vender desde el primer día."
+              price="$599"
             />
           </motion.div>
 
@@ -74,6 +75,7 @@ export function Services() {
               icon={<Bot className="h-6 w-6" />}
               title="Chatbots con IA"
               description="Atiende a tus clientes 24/7 con asistentes inteligentes integrados a tu negocio."
+              price="$299"
             />
           </motion.div>
 
@@ -84,6 +86,7 @@ export function Services() {
               icon={<Zap className="h-6 w-6" />}
               title="Automatizaciones"
               description="Conectamos tus herramientas para que tu negocio funcione solo, sin tareas repetitivas."
+              price="$249"
             />
           </motion.div>
         </motion.div>
@@ -97,11 +100,13 @@ function ServiceCard({
   icon,
   title,
   description,
+  price,
 }: {
   number: string;
   icon: React.ReactNode;
   title: string;
   description: string;
+  price?: string;
 }) {
   return (
     <div className="group relative h-full overflow-hidden rounded-xl border border-mh-border bg-mh-surface p-8 transition-colors duration-300 hover:border-mh-border-hover">
@@ -114,6 +119,11 @@ function ServiceCard({
         </div>
         <h3 className="text-xl font-semibold text-white">{title}</h3>
         <p className="mt-3 text-sm text-mh-muted">{description}</p>
+        {price && (
+          <p className="mt-6 text-sm font-medium text-white">
+            Desde <span className="text-mh-muted">{price}</span>
+          </p>
+        )}
       </div>
     </div>
   );
