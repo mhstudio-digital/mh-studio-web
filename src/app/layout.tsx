@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "Creamos sitios web profesionales para restaurantes, tiendas y emprendedores en Costa Rica. Diseño premium, resultados reales.",
   keywords: "diseño web Costa Rica, sitios web profesionales, agencia web CR",
   metadataBase: new URL("https://mhstudio-digital.github.io/mh-studio-web"),
+  verification: {
+    google: "xVWOhXeMAwp8pIJbZr9McJvn3w2tj_12Uz2eADf7o_g",
+  },
   openGraph: {
     title: "MH Studio — Diseño Web Premium en Costa Rica",
     description:
@@ -79,17 +82,11 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <head>
-        <meta
-          name="google-site-verification"
-          content="xVWOhXeMAwp8pIJbZr9McJvn3w2tj_12Uz2eADf7o_g"
-        />
+      <body className="min-h-full flex flex-col bg-mh-bg text-mh-text">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col bg-mh-bg text-mh-text">
         {children}
       </body>
     </html>
