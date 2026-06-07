@@ -8,6 +8,7 @@ import { Process } from "@/components/process";
 import { FAQ } from "@/components/faq";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
