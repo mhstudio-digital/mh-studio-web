@@ -113,6 +113,14 @@ export function Portfolio() {
                     </li>
                   ))}
                 </ul>
+                <a
+                  href="https://matiasparfum.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center text-sm font-medium text-white underline-offset-4 hover:underline"
+                >
+                  Ver proyecto
+                </a>
               </div>
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-mh-border transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                 <ScreenshotImage
