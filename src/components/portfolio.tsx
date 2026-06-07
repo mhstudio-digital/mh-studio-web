@@ -59,7 +59,8 @@ const DEMO_PROJECTS = [
     gradient: "from-white/[0.04] via-transparent to-white/[0.08]",
     badge: "Demo conceptual",
     url: "https://mhstudio-digital.github.io/ansel-boutique/",
-    image: undefined,
+    image:
+      "https://api.microlink.io/?url=https://mhstudio-digital.github.io/ansel-boutique/&screenshot=true&meta=false&embed=screenshot.url",
   },
 ];
 
@@ -156,18 +157,16 @@ export function Portfolio() {
                 />
                 <div className="relative">
                   {project.image ? (
-                    <div className="relative h-[200px] w-full overflow-hidden rounded-lg border border-mh-border">
-                      <ScreenshotImage
-                        src={project.image}
-                        alt={`Captura del sitio ${project.title}`}
-                        gradient={project.gradient}
-                        className="h-full w-full"
-                      />
-                      <div className="absolute inset-0 bg-black/30" />
-                    </div>
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      loading="lazy"
+                      className="w-full h-48 object-cover object-top rounded-lg"
+                    />
                   ) : (
                     <div
-                      className={`h-[200px] w-full overflow-hidden rounded-lg border border-mh-border bg-gradient-to-br ${project.gradient} bg-mh-bg`}
+                      className={`h-48 w-full overflow-hidden rounded-lg border border-mh-border bg-gradient-to-br ${project.gradient} bg-mh-bg`}
                     />
                   )}
                   <span className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
