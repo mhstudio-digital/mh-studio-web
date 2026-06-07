@@ -9,16 +9,20 @@ const fadeUp = {
 
 const DEMO_PROJECTS = [
   {
-    title: "La Cevichera",
-    description: "Sitio para restaurante de mariscos con menú digital",
-    tags: ["Restaurante", "Menú digital"],
+    title: "Costa Rica Properties",
+    description: "Sitio de bienes raíces de lujo con búsqueda de propiedades y diseño premium",
+    tags: ["Luxury Real Estate", "Diseño premium", "Demo conceptual"],
     gradient: "from-white/[0.06] via-transparent to-white/[0.02]",
+    badge: "Demo conceptual",
+    url: "https://mhstudio-digital.github.io/costa-rica-properties/",
   },
   {
     title: "Ansel Boutique",
     description: "Tienda de moda con catálogo y checkout integrado",
     tags: ["E-commerce", "Branding"],
     gradient: "from-white/[0.04] via-transparent to-white/[0.08]",
+    badge: "Próximamente",
+    url: undefined,
   },
 ];
 
@@ -101,7 +105,7 @@ export function Portfolio() {
                 />
                 <div className="relative">
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
-                    Demo conceptual
+                    {project.badge}
                   </span>
                   <h3 className="mt-5 text-xl font-semibold text-white">
                     {project.title}
@@ -119,6 +123,16 @@ export function Portfolio() {
                       </li>
                     ))}
                   </ul>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center text-sm font-medium text-white underline-offset-4 hover:underline"
+                    >
+                      Ver proyecto
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
