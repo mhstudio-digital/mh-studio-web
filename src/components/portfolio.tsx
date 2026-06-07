@@ -15,6 +15,7 @@ const DEMO_PROJECTS = [
     gradient: "from-white/[0.06] via-transparent to-white/[0.02]",
     badge: "Demo conceptual",
     url: "https://mhstudio-digital.github.io/costa-rica-properties/",
+    image: "/screenshots/costa-rica-properties.jpg",
   },
   {
     title: "Ansel Boutique",
@@ -23,6 +24,7 @@ const DEMO_PROJECTS = [
     gradient: "from-white/[0.04] via-transparent to-white/[0.08]",
     badge: "Próximamente",
     url: undefined,
+    image: undefined,
   },
 ];
 
@@ -77,8 +79,14 @@ export function Portfolio() {
                   ))}
                 </ul>
               </div>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-mh-border bg-gradient-to-br from-mh-bg via-mh-surface to-black transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.12),transparent_60%)]" />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-mh-border transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/matias-parfum.jpg"
+                  alt="Captura del sitio Matías Parfum"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30" />
                 <span className="absolute bottom-5 left-5 text-sm font-medium text-white/70">
                   matiasparfum.com
                 </span>
@@ -104,7 +112,22 @@ export function Portfolio() {
                   className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
                 />
                 <div className="relative">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
+                  {project.image ? (
+                    <div className="relative h-[200px] w-full overflow-hidden rounded-lg border border-mh-border">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={project.image}
+                        alt={`Captura del sitio ${project.title}`}
+                        className="h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/30" />
+                    </div>
+                  ) : (
+                    <div
+                      className={`h-[200px] w-full overflow-hidden rounded-lg border border-mh-border bg-gradient-to-br ${project.gradient} bg-mh-bg`}
+                    />
+                  )}
+                  <span className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
                     {project.badge}
                   </span>
                   <h3 className="mt-5 text-xl font-semibold text-white">
