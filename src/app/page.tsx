@@ -4,6 +4,7 @@ import { Logos } from "@/components/logos";
 import { Services } from "@/components/services";
 import { Portfolio } from "@/components/portfolio";
 import { Process } from "@/components/process";
+import { FAQ } from "@/components/faq";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Services />
         <Portfolio />
         <Process />
+        <FAQ />
         <CTA />
       </main>
       <Footer />
