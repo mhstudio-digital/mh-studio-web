@@ -52,6 +52,13 @@ export function Navbar() {
             <span className="relative">Hablemos →</span>
           </Link>
 
+          <Link
+            href="/portal/login/"
+            className="hidden text-xs text-mh-muted/70 transition-colors hover:text-mh-muted md:inline-block"
+          >
+            Portal clientes
+          </Link>
+
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
