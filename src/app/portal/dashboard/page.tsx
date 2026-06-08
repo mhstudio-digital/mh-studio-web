@@ -32,8 +32,13 @@ export default function DashboardPage() {
   const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
-    if (!loading && !user) router.replace("/portal/login");
-  }, [user, loading, router]);
+    if (loading) return;
+    if (!user) {
+      router.replace("/portal/login");
+    } else if (profile?.isAdmin) {
+      router.replace("/portal/admin/");
+    }
+  }, [user, profile, loading, router]);
 
   useEffect(() => {
     if (!user) return;
@@ -54,7 +59,7 @@ export default function DashboardPage() {
     fetchProyecto();
   }, [user]);
 
-  if (loading || !user) {
+  if (loading || !user || profile?.isAdmin) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-mh-bg">
         <p className="text-sm text-mh-muted">Cargando…</p>
