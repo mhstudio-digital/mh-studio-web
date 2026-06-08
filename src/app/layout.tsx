@@ -22,28 +22,28 @@ export const metadata: Metadata = {
     google: "xVWOhXeMAwp8pIJbZr9McJvn3w2tj_12Uz2eADf7o_g",
   },
   openGraph: {
-    title: "MH Studio — Diseño Web Premium en Costa Rica",
+    title: "MH Studio — Diseño web que vende",
     description:
-      "Creamos sitios web profesionales para restaurantes, tiendas y emprendedores en Costa Rica. Diseño premium, resultados reales.",
-    url: "https://mhstudio-digital.github.io/mh-studio-web",
+      "Creamos sitios premium para restaurantes, tiendas y emprendedores en Costa Rica.",
+    url: "https://mhstudio-digital.github.io/mh-studio-web/",
     siteName: "MH Studio",
     locale: "es_CR",
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://mhstudio-digital.github.io/mh-studio-web/og/og-image.png",
         width: 1200,
         height: 630,
-        alt: "MH Studio — Diseño Web Premium en Costa Rica",
+        alt: "MH Studio — Diseño web que vende",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MH Studio — Diseño Web Premium en Costa Rica",
+    title: "MH Studio — Diseño web que vende",
     description:
-      "Creamos sitios web profesionales para restaurantes, tiendas y emprendedores en Costa Rica. Diseño premium, resultados reales.",
-    images: ["/og-image.png"],
+      "Creamos sitios premium para restaurantes, tiendas y emprendedores en Costa Rica.",
+    images: ["https://mhstudio-digital.github.io/mh-studio-web/og/og-image.png"],
   },
 };
 
