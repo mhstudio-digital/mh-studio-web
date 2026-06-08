@@ -104,6 +104,15 @@ export function Navbar() {
                   <span className="relative">Hablemos →</span>
                 </Link>
               </li>
+              <li className="pt-2 text-center">
+                <Link
+                  href="/portal/login/"
+                  onClick={() => setIsOpen(false)}
+                  className="text-xs text-mh-muted/70 transition-colors hover:text-mh-muted"
+                >
+                  Portal clientes
+                </Link>
+              </li>
             </ul>
           </motion.div>
         )}
