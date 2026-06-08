@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mhstudio-digital.github.io/mh-studio-web/sitemap.xml
