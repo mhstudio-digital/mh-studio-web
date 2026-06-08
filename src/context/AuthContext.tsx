@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { onAuthStateChanged, type User } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase";
 
 export type UserProfile = {
@@ -41,8 +41,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(firebaseUser);
 
       if (firebaseUser) {
-        const snapshot = await getDoc(doc(db, "users", firebaseUser.uid));
-        setProfile(snapshot.exists() ? (snapshot.data() as UserProfile) : null);
+        const userRef = doc(db, "users", firebaseUser.uid);
+        const snapshot = await getDoc(userRef);
+
+        if (snapshot.exists()) {
+          setProfile(snapshot.data() as UserProfile);
+        } else {
+          const newProfileFields = {
+            email: firebaseUser.email,
+            nombre: "",
+            isAdmin: false,
+            createdAt: new Date(),
+          };
+          await setDoc(userRef, newProfileFields, { merge: true });
+          setProfile({ uid: firebaseUser.uid, ...newProfileFields } as UserProfile);
+        }
       } else {
         setProfile(null);
       }
